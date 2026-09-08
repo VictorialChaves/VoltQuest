@@ -1,0 +1,7 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Ignora configurações locais de exportação (evita vazamento de caminhos do PC e chaves/senhas)
+export_presets.cfg
+export_presets

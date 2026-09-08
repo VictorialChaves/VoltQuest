@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bj83t8t5o1mgk"]
+
+[ext_resource type="Texture2D" uid="uid://bcpitn3oeu68c" path="res://assets/sprites/lampada.png" id="1_byqnh"]
+
+[node name="Lampada Dica" type="Area2D" unique_id=99663401]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=182865948]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1246921971]
+
+[node name="lampada_dica" type="Sprite2D" parent="CollisionShape2D" unique_id=1258416925]
+position = Vector2(1069, 78)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_byqnh")
+
+[node name="Panel" type="Panel" parent="CollisionShape2D/lampada_dica" unique_id=554656189]
+offset_left = -130.00012
+offset_top = -145.0
+offset_right = 114.99988
+offset_bottom = 149.99997
+metadata/_edit_use_anchors_ = true

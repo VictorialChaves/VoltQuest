@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://doxgjqw8nrtu5"]
+
+[ext_resource type="Script" uid="uid://clgefv6s53tm8" path="res://scripts/equipamento.gd" id="1_uly2f"]
+[ext_resource type="Texture2D" uid="uid://kugxlltnhdcn" path="res://assets/sprites/resistor_1k.png" id="2_uly2f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6snss"]
+size = Vector2(269, 60)
+
+[node name="Equipamento" type="Area2D" unique_id=520113793]
+script = ExtResource("1_uly2f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1976324281]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_uly2f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1313646698]
+visible = false
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_6snss")
+
+[node name="Panel" type="Panel" parent="." unique_id=441874634]
+visible = false
+offset_left = 59.0
+offset_top = -70.0
+offset_right = 481.0
+offset_bottom = -29.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Panel" unique_id=1800953896]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 8.0
+offset_right = 419.0
+offset_bottom = 39.0
+text = "Resistor de 1kΩ: Limita a corrente elétrica no circuito."
+
+[node name="Resistor1k" type="Sprite2D" parent="." unique_id=88290037]
+position = Vector2(1395, -167)
+texture = ExtResource("2_uly2f")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

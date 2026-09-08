@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://wtee0rsrrmqs"]
+
+[ext_resource type="PackedScene" uid="uid://doxgjqw8nrtu5" path="res://cenas/equipamento.tscn" id="1_s4lit"]
+
+[node name="Bancada" type="Node2D" unique_id=304925857]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=937604184]
+offset_right = 1152.0
+offset_bottom = 645.0
+mouse_filter = 2
+color = Color(0.47, 0.3525, 0.235, 1)
+
+[node name="Equipamento" parent="." unique_id=520113793 instance=ExtResource("1_s4lit")]
+position = Vector2(598, 313)
