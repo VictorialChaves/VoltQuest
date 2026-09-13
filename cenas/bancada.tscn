@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://wtee0rsrrmqs"]
 
 [ext_resource type="PackedScene" uid="uid://doxgjqw8nrtu5" path="res://cenas/equipamento.tscn" id="1_s4lit"]
+[ext_resource type="Script" uid="uid://uf8x562tx2v2" path="res://cenas/bancada.gd" id="1_wnqrf"]
+[ext_resource type="PackedScene" uid="uid://bj83t8t5o1mgk" path="res://cenas/lampada_dica.tscn" id="2_rxuge"]
+[ext_resource type="PackedScene" uid="uid://brak87vwxfh60" path="res://cenas/led.tscn" id="3_j2uq7"]
+[ext_resource type="PackedScene" uid="uid://bjtfyp6wq4eis" path="res://cenas/interruptor.tscn" id="4_wnqrf"]
 
 [node name="Bancada" type="Node2D" unique_id=304925857]
+script = ExtResource("1_wnqrf")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=937604184]
 offset_right = 1152.0
@@ -11,4 +16,15 @@ mouse_filter = 2
 color = Color(0.47, 0.3525, 0.235, 1)
 
 [node name="Equipamento" parent="." unique_id=520113793 instance=ExtResource("1_s4lit")]
-position = Vector2(598, 313)
+position = Vector2(123, 606)
+
+[node name="Lampada Dica" parent="." unique_id=99663401 instance=ExtResource("2_rxuge")]
+position = Vector2(27, -22)
+
+[node name="Led" parent="." unique_id=213177727 instance=ExtResource("3_j2uq7")]
+position = Vector2(510, 247)
+
+[node name="Interruptor" parent="." unique_id=1904299547 instance=ExtResource("4_wnqrf")]
+position = Vector2(708, 241)
+
+[connection signal="input_event" from="Interruptor" to="." method="_on_interruptor_input_event"]

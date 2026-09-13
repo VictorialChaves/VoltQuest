@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://brak87vwxfh60"]
+
+[ext_resource type="Texture2D" uid="uid://dxysoewp3kwuo" path="res://assets/sprites/led_apagado.png" id="1_h8xge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6snss"]
+size = Vector2(76, 177)
+
+[node name="Led" type="Node2D" unique_id=213177727]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1176792566]
+position = Vector2(0, 3.8146973e-06)
+scale = Vector2(0.5730769, 0.6041666)
+texture = ExtResource("1_h8xge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=289486384]
+visible = false
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_6snss")

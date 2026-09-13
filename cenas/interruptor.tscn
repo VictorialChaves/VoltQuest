@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bjtfyp6wq4eis"]
+
+[ext_resource type="Texture2D" uid="uid://c8trfsoxcnjwd" path="res://assets/sprites/interruptor.png" id="1_m7307"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6snss"]
+size = Vector2(118.88103, 53.459217)
+
+[node name="Interruptor" type="Area2D" unique_id=1904299547]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1282206738]
+position = Vector2(1.9999998, -2.000004)
+scale = Vector2(0.65611815, 0.6734104)
+shape = SubResource("RectangleShape2D_6snss")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1714901881]
+position = Vector2(1.9999962, -1.9999962)
+scale = Vector2(0.65611815, 0.6734104)
+texture = ExtResource("1_m7307")
