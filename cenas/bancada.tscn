@@ -10,6 +10,46 @@
 [ext_resource type="PackedScene" uid="uid://bubfytosb8t66" path="res://cenas/fio_positivo.tscn" id="8_34imo"]
 [ext_resource type="PackedScene" uid="uid://d07xiutnnhl1m" path="res://cenas/fio_negativo.tscn" id="9_14mtv"]
 [ext_resource type="PackedScene" uid="uid://chd5mil0d8qjn" path="res://cenas/bateria.tscn" id="10_o18lp"]
+[ext_resource type="Texture2D" uid="uid://cr7v7k6i1udpw" path="res://assets/sprites/explosao1.png" id="11_1a6ht"]
+[ext_resource type="Texture2D" uid="uid://xj358lor253p" path="res://assets/sprites/explosao2.png" id="12_4qpur"]
+[ext_resource type="Texture2D" uid="uid://d1phburbkr0s7" path="res://assets/sprites/explosao3.png" id="13_4uixu"]
+[ext_resource type="Texture2D" uid="uid://bhpjf6yxhaxev" path="res://assets/sprites/explosao4.png" id="14_iiw4l"]
+[ext_resource type="Texture2D" uid="uid://c8mxsjfn0ga5" path="res://assets/sprites/explosao5.png" id="15_m4mp4"]
+[ext_resource type="Texture2D" uid="uid://whenw8idltxh" path="res://assets/sprites/explosao6.png" id="16_lqt40"]
+[ext_resource type="Texture2D" uid="uid://o5k6ixumbxki" path="res://assets/sprites/explosao7.png" id="17_rlrem"]
+[ext_resource type="Script" uid="uid://5fmcf83f8mlw" path="res://cenas/explosao.gd" id="18_4qpur"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6snss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_1a6ht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4qpur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4uixu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_iiw4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_m4mp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lqt40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rlrem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rlrem")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Bancada" type="Node2D" unique_id=304925857]
 script = ExtResource("1_wnqrf")
@@ -35,6 +75,13 @@ position = Vector2(130, 615)
 
 [node name="Led" parent="." unique_id=213177727 instance=ExtResource("3_j2uq7")]
 position = Vector2(881, 532)
+
+[node name="Explosao" type="AnimatedSprite2D" parent="Led" unique_id=622449050]
+visible = false
+position = Vector2(-6.1035156e-05, -42.99997)
+scale = Vector2(4.020834, 3.7291665)
+sprite_frames = SubResource("SpriteFrames_6snss")
+script = ExtResource("18_4qpur")
 
 [node name="bateria" parent="." unique_id=1355776516 instance=ExtResource("10_o18lp")]
 position = Vector2(1076, 526)

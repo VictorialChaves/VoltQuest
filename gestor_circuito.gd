@@ -3,6 +3,7 @@ extends Node
 # Sinais globais de energia
 signal energia_ligada
 signal energia_desligada
+signal curto_circuito
 
 # O caderno de anotações (onde as peças se ligam)
 var trilhas = {}
@@ -44,6 +45,13 @@ func testar_circuito():
 	print("\n--- A INICIAR MAPEAMENTO DO CIRCUITO ---")
 	print("Base de Dados Atual: ", trilhas) 
 	
+	# 1. Verifica se o LED está conectado em alguma trilha da protoboard
+	var led_na_placa = false
+	for pinos_da_trilha in trilhas.values():
+		if "Pino1_LED" in pinos_da_trilha or "Pino2_LED" in pinos_da_trilha:
+			led_na_placa = true
+			break
+	
 	var trilhas_para_visitar = []
 	var trilhas_visitadas = []
 	var pinos_visitados = ["Positivo_Bateria"] 
@@ -54,6 +62,10 @@ func testar_circuito():
 			
 	if trilhas_para_visitar.size() == 0:
 		print("❌ ERRO: O Positivo da Bateria não está ligado em lado nenhum!")
+		emit_signal("energia_desligada") 
+		# Só explode se o LED estiver na mesa
+		if led_na_placa:
+			emit_signal("curto_circuito") 
 		return false
 		
 	while trilhas_para_visitar.size() > 0:
@@ -68,7 +80,7 @@ func testar_circuito():
 		for pino in trilhas[trilha_explorada]:
 			if pino == "Negativo_Bateria":
 				print("✅ SUCESSO! Circuito Fechado! A corrente chegou ao negativo!")
-				emit_signal("energia_ligada") # AVISA O MUNDO QUE HÁ ENERGIA!
+				emit_signal("energia_ligada")
 				return true
 				
 			if not pino in pinos_visitados:
@@ -86,9 +98,12 @@ func testar_circuito():
 							break
 
 	print("❌ FALHA: O circuito está interrompido (aberto). A corrente perdeu-se!")
-	emit_signal("energia_desligada") # AVISA O MUNDO PARA APAGAR TUDO
+	emit_signal("energia_desligada") 
+	# Só explode se o LED estiver na mesa
+	if led_na_placa:
+		emit_signal("curto_circuito")    
 	return false
-
+	
 # Gatilho de teste (Tecla Espaço)
 func _input(event):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
