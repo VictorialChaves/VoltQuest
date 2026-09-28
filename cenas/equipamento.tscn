@@ -4,19 +4,22 @@
 [ext_resource type="Texture2D" uid="uid://kugxlltnhdcn" path="res://assets/sprites/resistor_1k.png" id="2_uly2f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6snss"]
-size = Vector2(269, 60)
+size = Vector2(168, 60)
 
-[node name="Equipamento" type="Area2D" unique_id=520113793]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccrme"]
+size = Vector2(14, 4.75)
+
+[node name="Resistor" type="Area2D" unique_id=520113793]
 script = ExtResource("1_uly2f")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1976324281]
-position = Vector2(-1.0000038, 0)
-scale = Vector2(0.2466763, 0.21764705)
+position = Vector2(0, -1.4210855e-14)
+scale = Vector2(0.22882949, 0.19379085)
 texture = ExtResource("2_uly2f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1313646698]
 visible = false
-position = Vector2(-1.5, 0)
+position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_6snss")
 
 [node name="Panel" type="Panel" parent="." unique_id=441874634]
@@ -35,8 +38,24 @@ offset_right = 419.0
 offset_bottom = 39.0
 text = "Resistor de 1kΩ: Limita a corrente elétrica no circuito."
 
-[node name="Resistor1k" type="Sprite2D" parent="." unique_id=88290037]
-position = Vector2(1395, -167)
-texture = ExtResource("2_uly2f")
+[node name="Pino1_resistor" type="Area2D" parent="." unique_id=535388918]
+position = Vector2(-76, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pino1_resistor" unique_id=1580759346]
+visible = false
+position = Vector2(4, -0.25)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Pino2_resistor" type="Area2D" parent="." unique_id=357189867]
+position = Vector2(76, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pino2_resistor" unique_id=1439479038]
+visible = false
+position = Vector2(-4, -0.625)
+shape = SubResource("RectangleShape2D_ccrme")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="area_entered" from="Pino1_resistor" to="." method="_on_pino_1_resistor_area_entered"]
+[connection signal="area_exited" from="Pino1_resistor" to="." method="_on_pino_1_resistor_area_exited"]
+[connection signal="area_entered" from="Pino2_resistor" to="." method="_on_pino_2_resistor_area_entered"]
+[connection signal="area_exited" from="Pino2_resistor" to="." method="_on_pino_2_resistor_area_exited"]

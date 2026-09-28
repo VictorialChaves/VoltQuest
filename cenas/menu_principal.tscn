@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cdx2u8ugn1net"]
+
+[ext_resource type="Script" uid="uid://deobwi6uo1w20" path="res://cenas/menu_principal.gd" id="1_405qn"]
+[ext_resource type="Texture2D" uid="uid://bd1l310lqe4yn" path="res://assets/sprites/menu principal.png" id="1_bllnq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ccrme"]
+
+[node name="menu_principal" type="Control" unique_id=1766065981]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_405qn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1316154516]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1118.0
+offset_bottom = 613.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bllnq")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Button" type="Button" parent="." unique_id=1678163563]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = -0.15
+offset_left = 472.0
+offset_top = 431.0
+offset_right = 681.0
+offset_bottom = 500.0
+icon = SubResource("CanvasTexture_ccrme")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
