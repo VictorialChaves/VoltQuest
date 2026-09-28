@@ -45,4 +45,9 @@ position = Vector2(972, 397)
 [node name="fio_positivo" parent="." unique_id=1789000547 instance=ExtResource("8_34imo")]
 position = Vector2(790, 430)
 
+[node name="Button" type="Button" parent="." unique_id=1183820507]
+offset_right = 37.0
+offset_bottom = 46.0
+
 [connection signal="input_event" from="Interruptor" to="." method="_on_interruptor_input_event"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
