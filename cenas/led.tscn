@@ -1,18 +1,53 @@
 [gd_scene format=3 uid="uid://brak87vwxfh60"]
 
+[ext_resource type="Script" uid="uid://bxj8pg1i7rke6" path="res://cenas/led.gd" id="1_6l5fu"]
 [ext_resource type="Texture2D" uid="uid://dxysoewp3kwuo" path="res://assets/sprites/led_apagado.png" id="1_h8xge"]
+[ext_resource type="Texture2D" uid="uid://p5srkoy1ilo" path="res://assets/sprites/led_aceso.png" id="2_lugp4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6snss"]
 size = Vector2(76, 177)
 
-[node name="Led" type="Node2D" unique_id=213177727]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccrme"]
+size = Vector2(4, 2)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1176792566]
-position = Vector2(0, 3.8146973e-06)
-scale = Vector2(0.5730769, 0.6041666)
+[node name="Led" type="Area2D" unique_id=159627801]
+script = ExtResource("1_6l5fu")
+textura_acesa = ExtResource("2_lugp4")
+
+[node name="SpriteApagado" type="Sprite2D" parent="." unique_id=1176792566]
+position = Vector2(-1, -1.999999)
+scale = Vector2(0.5326923, 0.5659722)
 texture = ExtResource("1_h8xge")
+
+[node name="SpriteAceso" type="Sprite2D" parent="." unique_id=1209807874]
+visible = false
+position = Vector2(-1, -1.999999)
+scale = Vector2(0.5326923, 0.5659722)
+texture = ExtResource("2_lugp4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=289486384]
 visible = false
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_6snss")
+
+[node name="Pino1_led" type="Area2D" parent="." unique_id=1499814228]
+position = Vector2(-9, 78)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pino1_led" unique_id=758566682]
+visible = false
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Pino2_led" type="Area2D" parent="." unique_id=1420427748]
+position = Vector2(8, 57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pino2_led" unique_id=1994615699]
+visible = false
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="area_entered" from="Pino1_led" to="." method="_on_pino_1_led_area_entered"]
+[connection signal="area_exited" from="Pino1_led" to="." method="_on_pino_1_led_area_exited"]
+[connection signal="area_entered" from="Pino2_led" to="." method="_on_pino_2_led_area_entered"]
+[connection signal="area_exited" from="Pino2_led" to="." method="_on_pino_2_led_area_exited"]
