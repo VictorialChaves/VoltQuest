@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="71.879074mm"
+   height="29.104256mm"
+   viewBox="0 0 71.879074 29.104256"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showguides="true">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="71.879074"
+       height="29.104256"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-10.254302,-96.481192)">
+    <rect
+       style="fill:#f9fb04;fill-opacity:1;fill-rule:evenodd;stroke-width:3.06113;stroke-opacity:0.562249"
+       id="rect1"
+       width="28.800001"
+       height="51.432934"
+       x="-125.6305"
+       y="9.8225861"
+       inkscape:export-filename="motor_dc.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       transform="rotate(-90.25551)" />
+    <path
+       id="rect2"
+       style="fill:#333333;fill-rule:evenodd;stroke-width:1.82634;stroke-opacity:0.562249"
+       d="m 66.321529,124.82746 -0.124754,-27.974723 3.547955,-0.01582 0.124754,27.974713 z" />
+    <path
+       id="rect2-4"
+       style="fill:#fbfb53;fill-opacity:1;fill-rule:evenodd;stroke-width:2.11411;stroke-opacity:0.562249"
+       d="M 61.752268,125.35983 61.623575,96.501753 c 0,0 1.536194,-0.0069 2.304297,-0.01028 0.768102,-0.0034 2.304307,-0.01028 2.304307,-0.01028 l 0.128693,28.858077 -2.304307,0.0103 z"
+       sodipodi:nodetypes="cczcccc" />
+    <rect
+       style="fill:#1a1a1a;fill-rule:evenodd;stroke-width:2.72775;stroke-opacity:0.562249"
+       id="rect2-6"
+       width="25.193754"
+       height="8.7884359"
+       x="-123.77547"
+       y="69.23259"
+       transform="rotate(-90.25551)" />
+    <ellipse
+       style="fill:#1a1a1a;fill-opacity:1;fill-rule:evenodd;stroke-width:3.10353;stroke-opacity:0.562249"
+       id="path3"
+       cx="-111.18889"
+       cy="77.815689"
+       rx="12.596711"
+       ry="3.822243"
+       transform="rotate(-90.25551)" />
+  </g>
+</svg>

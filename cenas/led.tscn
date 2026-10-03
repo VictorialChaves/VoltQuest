@@ -12,7 +12,6 @@ size = Vector2(4, 2)
 
 [node name="Led" type="Area2D" unique_id=159627801]
 script = ExtResource("1_6l5fu")
-textura_acesa = ExtResource("2_lugp4")
 
 [node name="SpriteApagado" type="Sprite2D" parent="." unique_id=1176792566]
 position = Vector2(-1, -1.999999)
