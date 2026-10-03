@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://bjtfyp6wq4eis"]
 
+[ext_resource type="Script" uid="uid://bekrkq5iso6fg" path="res://cenas/interruptor.gd" id="1_cjnae"]
 [ext_resource type="Texture2D" uid="uid://c8trfsoxcnjwd" path="res://assets/sprites/interruptor.png" id="1_m7307"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6snss"]
 size = Vector2(118.88103, 53.459217)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccrme"]
+size = Vector2(17, 34)
+
 [node name="Interruptor" type="Area2D" unique_id=1904299547]
+script = ExtResource("1_cjnae")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1282206738]
 position = Vector2(1.9999998, -2.000004)
@@ -16,3 +21,23 @@ shape = SubResource("RectangleShape2D_6snss")
 position = Vector2(1.9999962, -1.9999962)
 scale = Vector2(0.65611815, 0.6734104)
 texture = ExtResource("1_m7307")
+
+[node name="Pino1" type="Area2D" parent="." unique_id=1692911586]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pino1" unique_id=965178049]
+visible = false
+position = Vector2(-26.5, -1)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Pino2" type="Area2D" parent="." unique_id=458364427]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pino2" unique_id=1029040745]
+visible = false
+position = Vector2(31, -1)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="area_entered" from="Pino1" to="." method="_on_pino_1_area_entered"]
+[connection signal="area_exited" from="Pino1" to="." method="_on_pino_1_area_exited"]
+[connection signal="area_entered" from="Pino2" to="." method="_on_pino_2_area_entered"]
+[connection signal="area_exited" from="Pino2" to="." method="_on_pino_2_area_exited"]

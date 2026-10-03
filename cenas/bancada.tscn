@@ -2,29 +2,137 @@
 
 [ext_resource type="PackedScene" uid="uid://doxgjqw8nrtu5" path="res://cenas/equipamento.tscn" id="1_s4lit"]
 [ext_resource type="Script" uid="uid://uf8x562tx2v2" path="res://cenas/bancada.gd" id="1_wnqrf"]
+[ext_resource type="Texture2D" uid="uid://dnb4iwprs5gbb" path="res://assets/sprites/tela_fundo.png" id="2_m4mp4"]
 [ext_resource type="PackedScene" uid="uid://bj83t8t5o1mgk" path="res://cenas/lampada_dica.tscn" id="2_rxuge"]
 [ext_resource type="PackedScene" uid="uid://brak87vwxfh60" path="res://cenas/led.tscn" id="3_j2uq7"]
 [ext_resource type="PackedScene" uid="uid://bjtfyp6wq4eis" path="res://cenas/interruptor.tscn" id="4_wnqrf"]
+[ext_resource type="PackedScene" uid="uid://bxnr610gua24k" path="res://cenas/protoboard.tscn" id="6_papud"]
+[ext_resource type="Script" uid="uid://m6cuavtc5x4i" path="res://cenas/fio_negativo.gd" id="7_c1sf8"]
+[ext_resource type="PackedScene" uid="uid://bubfytosb8t66" path="res://cenas/fio_positivo.tscn" id="8_34imo"]
+[ext_resource type="PackedScene" uid="uid://d07xiutnnhl1m" path="res://cenas/fio_negativo.tscn" id="9_14mtv"]
+[ext_resource type="PackedScene" uid="uid://chd5mil0d8qjn" path="res://cenas/bateria.tscn" id="10_o18lp"]
+[ext_resource type="Texture2D" uid="uid://cr7v7k6i1udpw" path="res://assets/sprites/explosao1.png" id="11_1a6ht"]
+[ext_resource type="Texture2D" uid="uid://xj358lor253p" path="res://assets/sprites/explosao2.png" id="12_4qpur"]
+[ext_resource type="Texture2D" uid="uid://d1phburbkr0s7" path="res://assets/sprites/explosao3.png" id="13_4uixu"]
+[ext_resource type="Texture2D" uid="uid://bhpjf6yxhaxev" path="res://assets/sprites/explosao4.png" id="14_iiw4l"]
+[ext_resource type="Texture2D" uid="uid://c8mxsjfn0ga5" path="res://assets/sprites/explosao5.png" id="15_m4mp4"]
+[ext_resource type="AudioStream" uid="uid://dg0klj4gdpmbb" path="res://assets/sons/explosao_led.mp3" id="16_4uixu"]
+[ext_resource type="Texture2D" uid="uid://whenw8idltxh" path="res://assets/sprites/explosao6.png" id="16_lqt40"]
+[ext_resource type="Texture2D" uid="uid://o5k6ixumbxki" path="res://assets/sprites/explosao7.png" id="17_rlrem"]
+[ext_resource type="Script" uid="uid://5fmcf83f8mlw" path="res://cenas/explosao.gd" id="18_4qpur"]
+[ext_resource type="AudioStream" uid="uid://cwm8legfx8t60" path="res://assets/sons/leberch-interstellar-589820.mp3" id="20_iiw4l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m4mp4"]
+font_size = 27
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6snss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_1a6ht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4qpur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4uixu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_iiw4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_m4mp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lqt40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rlrem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rlrem")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Bancada" type="Node2D" unique_id=304925857]
 script = ExtResource("1_wnqrf")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=937604184]
-offset_right = 1152.0
-offset_bottom = 645.0
-mouse_filter = 2
-color = Color(0.47, 0.3525, 0.235, 1)
-
-[node name="Equipamento" parent="." unique_id=520113793 instance=ExtResource("1_s4lit")]
-position = Vector2(123, 606)
+[node name="TelaFundo" type="Sprite2D" parent="." unique_id=1119938750]
+position = Vector2(576, 323.99997)
+scale = Vector2(0.6, 0.59999996)
+texture = ExtResource("2_m4mp4")
 
 [node name="Lampada Dica" parent="." unique_id=99663401 instance=ExtResource("2_rxuge")]
-position = Vector2(27, -22)
+position = Vector2(-33, 80)
 
-[node name="Led" parent="." unique_id=213177727 instance=ExtResource("3_j2uq7")]
-position = Vector2(510, 247)
+[node name="protoboard" parent="." unique_id=1009461125 instance=ExtResource("6_papud")]
+position = Vector2(363, 337)
+script = ExtResource("7_c1sf8")
+
+[node name="Interface" type="CanvasLayer" parent="protoboard" unique_id=1503001937]
+
+[node name="TextoInformativo" type="Label" parent="protoboard/Interface" unique_id=997251735]
+offset_left = 190.0
+offset_top = 85.0
+offset_right = 953.0
+offset_bottom = 122.0
+text = "ACENDA O LED"
+label_settings = SubResource("LabelSettings_m4mp4")
+horizontal_alignment = 1
+uppercase = true
+tab_stops = PackedFloat32Array(0)
 
 [node name="Interruptor" parent="." unique_id=1904299547 instance=ExtResource("4_wnqrf")]
-position = Vector2(708, 241)
+position = Vector2(1054, 146)
+
+[node name="Equipamento" parent="." unique_id=520113793 instance=ExtResource("1_s4lit")]
+position = Vector2(154, 623)
+
+[node name="Led" parent="." unique_id=213177727 instance=ExtResource("3_j2uq7")]
+position = Vector2(881, 532)
+
+[node name="Explosao" type="AnimatedSprite2D" parent="Led" unique_id=622449050]
+visible = false
+position = Vector2(-6.1035156e-05, -42.99997)
+scale = Vector2(4.020834, 3.7291665)
+sprite_frames = SubResource("SpriteFrames_6snss")
+script = ExtResource("18_4qpur")
+
+[node name="SomExplosao" type="AudioStreamPlayer2D" parent="Led/Explosao" unique_id=1430204466]
+stream = ExtResource("16_4uixu")
+volume_db = 13.388
+
+[node name="bateria" parent="." unique_id=1355776516 instance=ExtResource("10_o18lp")]
+position = Vector2(1076, 526)
+
+[node name="fio_negativo" parent="." unique_id=1568810718 instance=ExtResource("9_14mtv")]
+position = Vector2(972, 397)
+
+[node name="fio_positivo" parent="." unique_id=1789000547 instance=ExtResource("8_34imo")]
+position = Vector2(869, 427)
+
+[node name="Button" type="Button" parent="." unique_id=1183820507]
+offset_right = 30.0
+offset_bottom = 46.0
+text = "↩️"
+flat = true
+
+[node name="Button2" type="Button" parent="." unique_id=1245187908]
+offset_left = 31.0
+offset_top = 8.0
+offset_right = 61.0
+offset_bottom = 39.0
+text = "⏭️
+"
+flat = true
+
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=564103238]
+stream = ExtResource("20_iiw4l")
+autoplay = true
 
 [connection signal="input_event" from="Interruptor" to="." method="_on_interruptor_input_event"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bv6s4efegvwr8"]
+
+[ext_resource type="Script" uid="uid://dbnnb84ot1gb6" path="res://cenas/ldr.gd" id="1_i7tql"]
+[ext_resource type="Texture2D" uid="uid://krisohr7mw2o" path="res://assets/sprites/ldr.png" id="1_vlo4m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6snss"]
+size = Vector2(58, 27)
+
+[node name="LDR" type="Area2D" unique_id=958881479]
+script = ExtResource("1_i7tql")
+mensagem_educativa = "Sensor LDR: Os 'olhos' do robô. No chão claro, a resistência cai e a energia passa. Na linha preta, a energia é cortada"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=367291923]
+scale = Vector2(0.19956894, 0.17768596)
+texture = ExtResource("1_vlo4m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1638913941]
+visible = false
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_6snss")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

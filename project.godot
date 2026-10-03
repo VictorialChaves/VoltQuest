@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="VoltQuest"
-run/main_scene="uid://wtee0rsrrmqs"
+run/main_scene="uid://cdx2u8ugn1net"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GestorCircuito="*uid://db534nu5yltfu"
 
 [display]
 
