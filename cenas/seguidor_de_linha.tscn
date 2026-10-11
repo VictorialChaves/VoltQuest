@@ -68,6 +68,14 @@ offset_bottom = 31.0
 text = "↩️"
 flat = true
 
+[node name="Button2" type="Button" parent="." unique_id=1817436451]
+offset_left = 23.0
+offset_right = 53.0
+offset_bottom = 31.0
+text = "⏭️
+"
+flat = true
+
 [node name="Interface" type="CanvasLayer" parent="." unique_id=2128757554]
 
 [node name="TextoInformativo" type="Label" parent="Interface" unique_id=1551203034]
@@ -83,3 +91,4 @@ uppercase = true
 tab_stops = PackedFloat32Array(0)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
