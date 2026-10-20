@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ccle52au7gbn8"]
+
+[ext_resource type="Script" uid="uid://byufrqy8qgnih" path="res://h_slider.gd" id="1_4jc54"]
+
+[node name="MenuVolume" type="CanvasLayer" unique_id=1766860655]
+
+[node name="HSlider" type="HSlider" parent="." unique_id=805210507]
+offset_left = 1037.0
+offset_top = 2.0
+offset_right = 1136.0
+offset_bottom = 127.0
+max_value = 1.0
+step = 0.03
+value = 0.9
+script = ExtResource("1_4jc54")
+
+[connection signal="value_changed" from="HSlider" to="HSlider" method="_on_value_changed"]

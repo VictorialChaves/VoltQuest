@@ -21,8 +21,8 @@ GestorCircuito="*uid://db534nu5yltfu"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [physics]
 

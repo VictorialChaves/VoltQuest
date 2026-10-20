@@ -38,6 +38,12 @@ func tentar_encaixar():
 				global_position = marcador.global_position
 				encaixado = true
 				
+				# --- 🎵 NOVA PARTE: O SOM DO ENCAIXE 🎵 ---
+				var alto_falante = get_tree().root.find_child("SomEncaixe", true, false)
+				if alto_falante != null:
+					alto_falante.play()
+				# ------------------------------------------
+				
 				var robo_pai = get_tree().root.find_child("RoboMontagem", true, false)
 				if robo_pai != null and robo_pai.has_method("registrar_peca"):
 					robo_pai.registrar_peca()

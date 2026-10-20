@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://deobwi6uo1w20" path="res://cenas/menu_principal.gd" id="1_405qn"]
 [ext_resource type="Texture2D" uid="uid://bd1l310lqe4yn" path="res://assets/sprites/menu principal.png" id="1_bllnq"]
+[ext_resource type="AudioStream" uid="uid://mpnkosta3rc2" path="res://assets/sons/lofi.mp3" id="3_0w2hc"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ccrme"]
 
@@ -28,6 +29,7 @@ stretch_mode = 6
 [node name="Button" type="Button" parent="." unique_id=1678163563]
 layout_mode = 1
 anchors_preset = -1
+anchor_top = -0.15
 anchor_bottom = -0.15
 offset_left = 472.0
 offset_top = 431.0
@@ -36,5 +38,9 @@ offset_bottom = 500.0
 icon = SubResource("CanvasTexture_ccrme")
 flat = true
 metadata/_edit_use_anchors_ = true
+
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=192783556]
+stream = ExtResource("3_0w2hc")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

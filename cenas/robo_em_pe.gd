@@ -7,7 +7,12 @@ func _ready():
 	set_meta("andando", false)
 
 func _process(delta):
-	# Se a transformação ativou a variável "andando"...
 	if get_meta("andando") == true:
-		# Move o robô para a direita
 		position.x += velocidade * delta
+		
+		# Ajuste o valor 1000 para o limite da sua tela
+		if position.x > 1000:
+			set_meta("andando", false)
+			var tela_fim = get_tree().root.find_child("TelaFimDeFase", true, false)
+			if tela_fim != null:
+				tela_fim.mostrar_vitoria()

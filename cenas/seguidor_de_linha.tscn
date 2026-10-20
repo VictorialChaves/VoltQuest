@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://bw35rhmcwf87t"]
 
 [ext_resource type="Script" uid="uid://d31y4s6dm8pj6" path="res://cenas/seguidor_de_linha.gd" id="1_i5v13"]
-[ext_resource type="Texture2D" uid="uid://dnb4iwprs5gbb" path="res://assets/sprites/tela_fundo.png" id="2_cw52b"]
+[ext_resource type="Texture2D" uid="uid://yacukuqhkql0" path="res://assets/sprites/tela_fundo.png" id="2_cw52b"]
+[ext_resource type="PackedScene" uid="uid://derieyte4u4jn" path="res://cenas/tela_fim_de_fase.tscn" id="2_w0ooc"]
 [ext_resource type="Texture2D" uid="uid://biemjf70xmdwr" path="res://assets/sprites/caminho1.png" id="3_xbrax"]
 [ext_resource type="PackedScene" uid="uid://b64anqavuaiik" path="res://cenas/carrinho.tscn" id="4_w0ooc"]
 [ext_resource type="PackedScene" uid="uid://bv6s4efegvwr8" path="res://cenas/ldr.tscn" id="5_cvsnu"]
 [ext_resource type="PackedScene" uid="uid://0gdfah7jqnv2" path="res://cenas/motor_dc.tscn" id="6_l0l6c"]
 [ext_resource type="AudioStream" uid="uid://s2o2bji642ui" path="res://assets/sons/interestelar2.mp3" id="7_i5v13"]
+[ext_resource type="AudioStream" uid="uid://poygmnrg858" path="res://assets/sons/pim.mp3" id="8_cw52b"]
+[ext_resource type="PackedScene" uid="uid://ccle52au7gbn8" path="res://cenas/menu_volume.tscn" id="9_xbrax"]
+[ext_resource type="PackedScene" uid="uid://bj83t8t5o1mgk" path="res://cenas/lampada_dica.tscn" id="11_cvsnu"]
 
 [sub_resource type="Curve2D" id="Curve2D_la7s3"]
 _data = {
@@ -20,6 +24,9 @@ font_size = 27
 [node name="seguidor_de_linha" type="Node2D" unique_id=157830078]
 script = ExtResource("1_i5v13")
 metadata/_edit_horizontal_guides_ = [-68.0]
+
+[node name="TelaFimDeFase" parent="." unique_id=1139651451 instance=ExtResource("2_w0ooc")]
+caminho_proxima_fase = "res://cenas/robo_montagem.tscn"
 
 [node name="TelaFundo" type="Sprite2D" parent="." unique_id=2033668180]
 position = Vector2(577.25, 322.00003)
@@ -47,10 +54,10 @@ rotation = -0.002626964
 scale = Vector2(1, 0.8007663)
 
 [node name="LDR" parent="." unique_id=958881479 instance=ExtResource("5_cvsnu")]
-position = Vector2(51, 611)
+position = Vector2(579, 611)
 
 [node name="LDR2" parent="." unique_id=23553202 instance=ExtResource("5_cvsnu")]
-position = Vector2(132, 614)
+position = Vector2(490, 609)
 
 [node name="Motor DC" parent="." unique_id=465114205 instance=ExtResource("6_l0l6c")]
 position = Vector2(247, 611)
@@ -61,19 +68,12 @@ position = Vector2(368, 610)
 [node name="Música de fundo" type="AudioStreamPlayer" parent="." unique_id=2018004715]
 stream = ExtResource("7_i5v13")
 autoplay = true
+bus = &"Musica"
 
 [node name="Button" type="Button" parent="." unique_id=1066104133]
 offset_right = 30.0
 offset_bottom = 31.0
 text = "↩️"
-flat = true
-
-[node name="Button2" type="Button" parent="." unique_id=1817436451]
-offset_left = 23.0
-offset_right = 53.0
-offset_bottom = 31.0
-text = "⏭️
-"
 flat = true
 
 [node name="Interface" type="CanvasLayer" parent="." unique_id=2128757554]
@@ -90,5 +90,19 @@ autowrap_mode = 2
 uppercase = true
 tab_stops = PackedFloat32Array(0)
 
+[node name="SomEncaixe" type="AudioStreamPlayer" parent="." unique_id=803239493]
+stream = ExtResource("8_cw52b")
+bus = &"Efeitos"
+
+[node name="MenuVolume" parent="." unique_id=1766860655 instance=ExtResource("9_xbrax")]
+
+[node name="Lampada Dica" parent="." unique_id=99663401 instance=ExtResource("11_cvsnu")]
+position = Vector2(-33, 80)
+texto_da_dica = "Motores atrás para a força gerar,
+LDR na frente para a linha enxergar!
+Cada peça tem o seu lugar,
+Troque a ordem e ele não vai andar!"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+
+[editable path="Caminho1/Path2D/PathFollow2D/Carrinho"]

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://derieyte4u4jn"]
+
+[ext_resource type="Script" uid="uid://buj328onrr3y5" path="res://tela_fim_de_fase].gd" id="1_0q1vv"]
+[ext_resource type="Texture2D" uid="uid://cquktwr0qjmj1" path="res://assets/sprites/vitoria.png" id="2_xy8w1"]
+[ext_resource type="Texture2D" uid="uid://dgqw3qow7gijs" path="res://assets/sprites/erro.png" id="3_jijdp"]
+
+[node name="TelaFimDeFase" type="CanvasLayer" unique_id=1139651451]
+script = ExtResource("1_0q1vv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1087936790]
+visible = false
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 1151.0
+offset_bottom = 643.0
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="BotaoDerrota" type="TextureButton" parent="." unique_id=605400173]
+visible = false
+z_index = 100
+offset_right = 1153.0
+offset_bottom = 650.0
+texture_normal = ExtResource("3_jijdp")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="BotaoVitoria" type="TextureButton" parent="." unique_id=1245769677]
+visible = false
+anchors_preset = -1
+anchor_right = 3.7830002
+anchor_bottom = 3.39
+offset_left = -1.0
+offset_top = 2.0
+offset_right = -3189.8843
+offset_bottom = -1520.8201
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_xy8w1")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="BotaoDerrota" to="." method="_on_botao_derrota_pressed"]
+[connection signal="pressed" from="BotaoVitoria" to="." method="_on_botao_vitoria_pressed"]

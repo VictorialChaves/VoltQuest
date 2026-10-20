@@ -9,6 +9,11 @@ size = Vector2(118.88103, 53.459217)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ccrme"]
 size = Vector2(17, 34)
 
+[sub_resource type="LabelSettings" id="LabelSettings_6snss"]
+font_size = 11
+font_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
 [node name="Interruptor" type="Area2D" unique_id=1904299547]
 script = ExtResource("1_cjnae")
 
@@ -35,6 +40,14 @@ shape = SubResource("RectangleShape2D_ccrme")
 visible = false
 position = Vector2(31, -1)
 shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Label" type="Label" parent="." unique_id=887015833]
+offset_left = -25.0
+offset_top = 82.0
+offset_right = 45.0
+offset_bottom = 105.0
+text = "3 Cliques"
+label_settings = SubResource("LabelSettings_6snss")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="area_entered" from="Pino1" to="." method="_on_pino_1_area_entered"]

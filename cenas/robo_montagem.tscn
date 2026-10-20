@@ -2,7 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dwr0pw4hyhpp3" path="res://assets/sprites/corpo.png" id="1_hdsfu"]
 [ext_resource type="Script" uid="uid://y2fpai5c87ec" path="res://cenas/robo_montagem.gd" id="1_xjgqd"]
-[ext_resource type="Texture2D" uid="uid://dnb4iwprs5gbb" path="res://assets/sprites/tela_fundo.png" id="2_og3xn"]
+[ext_resource type="PackedScene" uid="uid://derieyte4u4jn" path="res://cenas/tela_fim_de_fase.tscn" id="2_cxedh"]
+[ext_resource type="Texture2D" uid="uid://yacukuqhkql0" path="res://assets/sprites/tela_fundo.png" id="2_og3xn"]
 [ext_resource type="Texture2D" uid="uid://c1glqqhlinqcr" path="res://assets/sprites/cabeca.png" id="2_xjgqd"]
 [ext_resource type="Texture2D" uid="uid://c507oy5mc0pq5" path="res://assets/sprites/perna.png" id="3_5yi1l"]
 [ext_resource type="Script" uid="uid://12w0vopw3g7c" path="res://cenas/cabeca.gd" id="4_5yi1l"]
@@ -15,9 +16,13 @@
 [ext_resource type="Texture2D" uid="uid://btfr5wm3kyxnp" path="res://assets/sprites/em_pe2.png" id="12_aixj1"]
 [ext_resource type="Texture2D" uid="uid://f3nkhvhjdjgd" path="res://assets/sprites/em_pe1.png" id="13_og3xn"]
 [ext_resource type="Script" uid="uid://botqquu6xpyde" path="res://cenas/robo_em_pe.gd" id="14_wsl7a"]
-[ext_resource type="AudioStream" uid="uid://s2o2bji642ui" path="res://assets/sons/interestelar2.mp3" id="16_wsl7a"]
 [ext_resource type="Script" uid="uid://drg1bk71a2dy4" path="res://cenas/microcontrolador.gd" id="17_0gw7t"]
+[ext_resource type="AudioStream" uid="uid://cn25sq4wv86em" path="res://assets/sons/lofi_.mp3" id="17_cxedh"]
 [ext_resource type="Texture2D" uid="uid://c01havgbdw3ul" path="res://assets/sprites/microcontrolador.png" id="18_0usov"]
+[ext_resource type="AudioStream" uid="uid://poygmnrg858" path="res://assets/sons/pim.mp3" id="19_0usov"]
+[ext_resource type="PackedScene" uid="uid://ccle52au7gbn8" path="res://cenas/menu_volume.tscn" id="20_vjoqv"]
+[ext_resource type="AudioStream" uid="uid://bou03nr4y2uov" path="res://assets/sons/robo.mp3" id="21_bu875"]
+[ext_resource type="PackedScene" uid="uid://bj83t8t5o1mgk" path="res://cenas/lampada_dica.tscn" id="23_32ch0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6snss"]
 size = Vector2(52, 237)
@@ -53,6 +58,9 @@ size = Vector2(129, 155.5)
 
 [node name="RoboMontagem" type="Node2D" unique_id=1344372478]
 script = ExtResource("1_xjgqd")
+
+[node name="TelaFimDeFase" parent="." unique_id=1139651451 instance=ExtResource("2_cxedh")]
+caminho_proxima_fase = "res://cenas/menu_principal.tscn"
 
 [node name="TelaFundo" type="Sprite2D" parent="." unique_id=961071918]
 position = Vector2(577.25, 325)
@@ -165,8 +173,9 @@ sprite_frames = SubResource("SpriteFrames_6snss")
 script = ExtResource("14_wsl7a")
 
 [node name="Música de fundo" type="AudioStreamPlayer" parent="." unique_id=554258781]
-stream = ExtResource("16_wsl7a")
+stream = ExtResource("17_cxedh")
 autoplay = true
+bus = &"Musica"
 
 [node name="Button" type="Button" parent="Música de fundo" unique_id=937843801]
 offset_right = 30.0
@@ -187,6 +196,23 @@ texture = ExtResource("18_0usov")
 visible = false
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_sowbf")
+
+[node name="SomEncaixe" type="AudioStreamPlayer" parent="." unique_id=608168947]
+stream = ExtResource("19_0usov")
+bus = &"Efeitos"
+
+[node name="MenuVolume" parent="." unique_id=1766860655 instance=ExtResource("20_vjoqv")]
+
+[node name="SomTransformacao" type="AudioStreamPlayer" parent="." unique_id=1215580858]
+stream = ExtResource("21_bu875")
+bus = &"Efeitos"
+
+[node name="Lampada Dica" parent="." unique_id=99663401 instance=ExtResource("23_32ch0")]
+position = Vector2(-33, 80)
+texto_da_dica = "Braços e pernas não bastam para viver,
+O Microcontrolador é o cérebro que o faz mover!
+Encaixe a placa no peito com precisão,
+Para o sistema ligar e o robô entrar em ação!"
 
 [connection signal="input_event" from="PernaEsquerda" to="PernaEsquerda" method="_on_perna_esquerda_input_event"]
 [connection signal="input_event" from="Cabeca" to="Cabeca" method="_on_perna_esquerda_input_event"]

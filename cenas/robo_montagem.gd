@@ -12,6 +12,9 @@ func registrar_peca():
 		transformar_robo()
 
 func transformar_robo():
+	# --- 🎵 O SOM ÉPICO DE MONTAGEM 🎵 ---
+	$SomTransformacao.play()
+	# ------------------------------------
 	# 1. Esconde o corpo inteiro (que agora tem todas as peças coladas a ele)
 	$Corpo.visible = false
 	

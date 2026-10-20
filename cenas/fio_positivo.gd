@@ -22,6 +22,11 @@ func _on_input_event(_viewport, event, _shape_idx):
 			# Larga a peça
 			selecionado = false
 			z_index = 1 # Devolve ao plano normal
+			# --- 🎵 SOM DO ENCAIXE / SOLTAR A PEÇA 🎵 ---
+			var alto_falante = get_tree().root.find_child("SomEncaixe", true, false)
+			if alto_falante != null:
+				alto_falante.play()
+			# --------------------------------------------
 
 # --- PONTA 1 ---
 func _on_ponta_1_area_entered(area: Area2D) -> void:

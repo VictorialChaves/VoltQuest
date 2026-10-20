@@ -12,7 +12,6 @@ func registrar_peca():
 	if pecas_conectadas == 4:
 		print("🤖 Robô totalmente montado! Motores ligados!")
 		circuito_fechado = true
-
 func _process(delta):
 	# Se as 4 peças estiverem no lugar, o carrinho anda!
 	if circuito_fechado:
@@ -26,3 +25,8 @@ func _process(delta):
 				# Quando bater no 1.0, chegou ao fim da pista!
 				print("🏁 Chegou à linha de chegada!")
 				circuito_fechado = false # Desliga os motores
+				
+				# --- ATIVA A TELA DE VITÓRIA AQUI ---
+				var tela_fim = get_tree().root.find_child("TelaFimDeFase", true, false)
+				if tela_fim != null:
+					tela_fim.mostrar_vitoria()
