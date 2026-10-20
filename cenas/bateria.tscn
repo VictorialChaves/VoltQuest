@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://chd5mil0d8qjn"]
+
+[ext_resource type="Texture2D" uid="uid://csigvmk7sha7d" path="res://assets/sprites/bateria.png" id="1_g6i3a"]
+[ext_resource type="Script" uid="uid://c7p4p6eemq0o8" path="res://cenas/bateria.gd" id="1_wtwd1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccrme"]
+size = Vector2(185.47198, 266.66675)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6snss"]
+size = Vector2(17.5, 11)
+
+[node name="bateria" type="Area2D" unique_id=1355776516]
+script = ExtResource("1_wtwd1")
+
+[node name="Bateria" type="Sprite2D" parent="." unique_id=1710279446]
+position = Vector2(0, 4.7683716e-07)
+scale = Vector2(0.6793478, 0.75)
+texture = ExtResource("1_g6i3a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=874807489]
+visible = false
+position = Vector2(0, 0.99999714)
+scale = Vector2(0.6793478, 0.7499998)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="PinoPositivo" type="Area2D" parent="." unique_id=979353698 groups=["coluna"]]
+position = Vector2(-37, -96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinoPositivo" unique_id=343980609]
+visible = false
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_6snss")
+
+[node name="PinoNegativo" type="Area2D" parent="." unique_id=608091322 groups=["coluna"]]
+position = Vector2(36, -97)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PinoNegativo" unique_id=1776475567]
+visible = false
+position = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_6snss")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="area_entered" from="PinoPositivo" to="." method="_on_pino_positivo_area_entered"]
+[connection signal="area_exited" from="PinoPositivo" to="." method="_on_pino_positivo_area_exited"]
+[connection signal="area_entered" from="PinoNegativo" to="." method="_on_pino_negativo_area_entered"]
+[connection signal="area_exited" from="PinoNegativo" to="." method="_on_pino_negativo_area_exited"]

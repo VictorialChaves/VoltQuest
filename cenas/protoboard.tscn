@@ -1,0 +1,450 @@
+[gd_scene format=3 uid="uid://bxnr610gua24k"]
+
+[ext_resource type="Texture2D" uid="uid://hoca85j5legj" path="res://assets/sprites/protoboard.png" id="1_gdlgu"]
+[ext_resource type="Script" uid="uid://c80q2in06kbl0" path="res://cenas/protoboard.gd" id="1_w1e12"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6snss"]
+size = Vector2(508, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccrme"]
+size = Vector2(13.5, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwrc3"]
+size = Vector2(560, 327)
+
+[node name="protoboard" type="Area2D" unique_id=799132505]
+script = ExtResource("1_w1e12")
+
+[node name="protoboard" type="Sprite2D" parent="." unique_id=2003363430]
+texture = ExtResource("1_gdlgu")
+
+[node name="Linhas_Alimentacao" type="Node2D" parent="." unique_id=1491518079]
+visible = false
+
+[node name="Trilha_Positiva_Cima" type="Area2D" parent="Linhas_Alimentacao" unique_id=1978284350 groups=["alimentacao"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Linhas_Alimentacao/Trilha_Positiva_Cima" unique_id=1258860091 groups=["alimentacao"]]
+position = Vector2(0, -141)
+shape = SubResource("RectangleShape2D_6snss")
+
+[node name="Trilha_Positiva_Baixo" type="Area2D" parent="Linhas_Alimentacao" unique_id=1587961563 groups=["alimentacao"]]
+position = Vector2(0, 265)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Linhas_Alimentacao/Trilha_Positiva_Baixo" unique_id=2076754910 groups=["alimentacao"]]
+position = Vector2(0, -141)
+shape = SubResource("RectangleShape2D_6snss")
+
+[node name="Trilha_Negativa_Cima" type="Area2D" parent="Linhas_Alimentacao" unique_id=380633778 groups=["alimentacao"]]
+position = Vector2(0, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Linhas_Alimentacao/Trilha_Negativa_Cima" unique_id=1308422753 groups=["alimentacao"]]
+position = Vector2(0, -140.5)
+shape = SubResource("RectangleShape2D_6snss")
+
+[node name="Trilha_Negativa_Baixo" type="Area2D" parent="Linhas_Alimentacao" unique_id=675177079 groups=["alimentacao"]]
+position = Vector2(-2, 293)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Linhas_Alimentacao/Trilha_Negativa_Baixo" unique_id=1862392483 groups=["alimentacao"]]
+position = Vector2(0, -152.5)
+shape = SubResource("RectangleShape2D_6snss")
+
+[node name="Colunas_Centrais" type="Node2D" parent="." unique_id=221948691]
+visible = false
+
+[node name="Coluna_1_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=1660746451 groups=["coluna"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_1_Cima" unique_id=1792993635 groups=["coluna"]]
+position = Vector2(-246.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_2_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=2123298960 groups=["coluna"]]
+position = Vector2(3, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_2_Cima" unique_id=126339758 groups=["coluna"]]
+position = Vector2(-233.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_3_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=1529430338 groups=["coluna"]]
+position = Vector2(3, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_3_Cima" unique_id=1132512155 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_4_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=1939820339 groups=["coluna"]]
+position = Vector2(19, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_4_Cima" unique_id=2067255295 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_5_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=798270680 groups=["coluna"]]
+position = Vector2(75, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_5_Cima" unique_id=1026740363 groups=["coluna"]]
+position = Vector2(-246.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_6_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=283244887 groups=["coluna"]]
+position = Vector2(78, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_6_Cima" unique_id=187623872 groups=["coluna"]]
+position = Vector2(-233.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_7_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=577588133 groups=["coluna"]]
+position = Vector2(78, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_7_Cima" unique_id=1658610234 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_8_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=782524962 groups=["coluna"]]
+position = Vector2(94, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_8_Cima" unique_id=498390309 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_9_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=1389485957 groups=["coluna"]]
+position = Vector2(150, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_9_Cima" unique_id=139524732 groups=["coluna"]]
+position = Vector2(-246.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_10_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=1992158440 groups=["coluna"]]
+position = Vector2(153, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_10_Cima" unique_id=504049537 groups=["coluna"]]
+position = Vector2(-233.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_11_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=1585557044 groups=["coluna"]]
+position = Vector2(153, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_11_Cima" unique_id=270421456 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_12_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=1935261425 groups=["coluna"]]
+position = Vector2(169, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_12_Cima" unique_id=1244154728 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_13_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=282604791 groups=["coluna"]]
+position = Vector2(225, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_13_Cima" unique_id=2131374712 groups=["coluna"]]
+position = Vector2(-246.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_14_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=548730577 groups=["coluna"]]
+position = Vector2(228, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_14_Cima" unique_id=352565878 groups=["coluna"]]
+position = Vector2(-233.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_15_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=488536886 groups=["coluna"]]
+position = Vector2(228, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_15_Cima" unique_id=381361039 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_16_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=649742820 groups=["coluna"]]
+position = Vector2(244, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_16_Cima" unique_id=702149726 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_17_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=2164582 groups=["coluna"]]
+position = Vector2(299, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_17_Cima" unique_id=180824209 groups=["coluna"]]
+position = Vector2(-246.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_18_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=1913799438 groups=["coluna"]]
+position = Vector2(302, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_18_Cima" unique_id=1058615230 groups=["coluna"]]
+position = Vector2(-233.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_19_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=1756000463 groups=["coluna"]]
+position = Vector2(302, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_19_Cima" unique_id=1557726024 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_20_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=208180267 groups=["coluna"]]
+position = Vector2(318, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_20_Cima" unique_id=142396541 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_21_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=1118627548 groups=["coluna"]]
+position = Vector2(374, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_21_Cima" unique_id=253933722 groups=["coluna"]]
+position = Vector2(-246.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_22_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=1055357807 groups=["coluna"]]
+position = Vector2(377, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_22_Cima" unique_id=1949414147 groups=["coluna"]]
+position = Vector2(-233.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_23_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=428398055 groups=["coluna"]]
+position = Vector2(377, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_23_Cima" unique_id=178733989 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_24_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=898208918 groups=["coluna"]]
+position = Vector2(393, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_24_Cima" unique_id=175218877 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_25_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=992183547 groups=["coluna"]]
+position = Vector2(449, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_25_Cima" unique_id=1222960339 groups=["coluna"]]
+position = Vector2(-246.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_26_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=1040485948 groups=["coluna"]]
+position = Vector2(452, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_26_Cima" unique_id=612641217 groups=["coluna"]]
+position = Vector2(-233.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_27_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=314223307 groups=["coluna"]]
+position = Vector2(452, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_27_Cima" unique_id=1989240520 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_28_Cima" type="Area2D" parent="Colunas_Centrais" unique_id=1776249864 groups=["coluna"]]
+position = Vector2(468, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_28_Cima" unique_id=604467001 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_1_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=2130980889 groups=["coluna"]]
+position = Vector2(1, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_1_Baixo" unique_id=1985163959 groups=["coluna"]]
+position = Vector2(-246.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_2_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=1253824772 groups=["coluna"]]
+position = Vector2(4, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_2_Baixo" unique_id=473669266 groups=["coluna"]]
+position = Vector2(-233.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_3_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=763494455 groups=["coluna"]]
+position = Vector2(4, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_3_Baixo" unique_id=1498032993 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_4_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=87881671 groups=["coluna"]]
+position = Vector2(20, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_4_Baixo" unique_id=625414077 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_5_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=1029908305 groups=["coluna"]]
+position = Vector2(76, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_5_Baixo" unique_id=821423230 groups=["coluna"]]
+position = Vector2(-246.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_6_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=770760327 groups=["coluna"]]
+position = Vector2(79, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_6_Baixo" unique_id=1510377268 groups=["coluna"]]
+position = Vector2(-233.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_7_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=78831305 groups=["coluna"]]
+position = Vector2(79, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_7_Baixo" unique_id=840206175 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_8_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=648086705 groups=["coluna"]]
+position = Vector2(95, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_8_Baixo" unique_id=1852567686 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_9_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=729009276 groups=["coluna"]]
+position = Vector2(151, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_9_Baixo" unique_id=2038579576 groups=["coluna"]]
+position = Vector2(-246.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_10_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=1306442911 groups=["coluna"]]
+position = Vector2(154, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_10_Baixo" unique_id=89946881 groups=["coluna"]]
+position = Vector2(-233.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_11_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=726616687 groups=["coluna"]]
+position = Vector2(154, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_11_Baixo" unique_id=1802784103 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_12_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=1813039625 groups=["coluna"]]
+position = Vector2(170, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_12_Baixo" unique_id=1938934977 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_13_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=1747147947 groups=["coluna"]]
+position = Vector2(226, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_13_Baixo" unique_id=1617914418 groups=["coluna"]]
+position = Vector2(-246.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_14_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=352540562 groups=["coluna"]]
+position = Vector2(229, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_14_Baixo" unique_id=1491541996 groups=["coluna"]]
+position = Vector2(-233.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_15_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=721220847 groups=["coluna"]]
+position = Vector2(229, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_15_Baixo" unique_id=467089026 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_16_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=181615422 groups=["coluna"]]
+position = Vector2(245, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_16_Baixo" unique_id=1241818639 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_17_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=1245755607 groups=["coluna"]]
+position = Vector2(300, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_17_Baixo" unique_id=1564751579 groups=["coluna"]]
+position = Vector2(-246.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_18_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=875630410 groups=["coluna"]]
+position = Vector2(303, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_18_Baixo" unique_id=651228043 groups=["coluna"]]
+position = Vector2(-233.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_19_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=1500990165 groups=["coluna"]]
+position = Vector2(303, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_19_Baixo" unique_id=829388127 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_20_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=1783361289 groups=["coluna"]]
+position = Vector2(319, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_20_Baixo" unique_id=1940313962 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_21_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=2090304689 groups=["coluna"]]
+position = Vector2(375, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_21_Baixo" unique_id=36558613 groups=["coluna"]]
+position = Vector2(-246.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_22_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=1745538617 groups=["coluna"]]
+position = Vector2(378, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_22_Baixo" unique_id=260772550 groups=["coluna"]]
+position = Vector2(-233.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_23_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=1230794211 groups=["coluna"]]
+position = Vector2(378, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_23_Baixo" unique_id=432650598 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_24_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=1645275442 groups=["coluna"]]
+position = Vector2(394, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_24_Baixo" unique_id=2799688 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_25_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=1460836567 groups=["coluna"]]
+position = Vector2(450, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_25_Baixo" unique_id=723080626 groups=["coluna"]]
+position = Vector2(-246.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_26_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=134537488 groups=["coluna"]]
+position = Vector2(453, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_26_Baixo" unique_id=644242581 groups=["coluna"]]
+position = Vector2(-233.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_27_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=198564062 groups=["coluna"]]
+position = Vector2(453, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_27_Baixo" unique_id=1803622574 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="Coluna_28_Baixo" type="Area2D" parent="Colunas_Centrais" unique_id=181565851 groups=["coluna"]]
+position = Vector2(469, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colunas_Centrais/Coluna_28_Baixo" unique_id=353131662 groups=["coluna"]]
+position = Vector2(-218.75, -52)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=573328903]
+visible = false
+position = Vector2(-1, 1.5)
+shape = SubResource("RectangleShape2D_dwrc3")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

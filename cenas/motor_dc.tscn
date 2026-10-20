@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://0gdfah7jqnv2"]
+
+[ext_resource type="Script" uid="uid://bktfy4x0lpl64" path="res://cenas/motor_dc.gd" id="1_7oadt"]
+[ext_resource type="Texture2D" uid="uid://da2lyi3iy0tr4" path="res://assets/sprites/motor_dc.svg" id="1_ftqwx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6snss"]
+size = Vector2(91, 32)
+
+[node name="Motor DC" type="Area2D" unique_id=465114205]
+script = ExtResource("1_7oadt")
+mensagem_educativa = "Motor DC: Transforma eletricidade em movimento. Ele só gira as rodas quando recebe energia liberada pelo sensor LDR"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2020145725]
+position = Vector2(1.9073486e-06, 4.7683716e-07)
+scale = Vector2(0.33823532, 0.29886362)
+texture = ExtResource("1_ftqwx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=629431732]
+visible = false
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_6snss")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

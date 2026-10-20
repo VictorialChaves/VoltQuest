@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bubfytosb8t66"]
+
+[ext_resource type="Texture2D" uid="uid://bvw83rmwylthc" path="res://assets/sprites/fio_positivo.png" id="1_pou6n"]
+[ext_resource type="Script" uid="uid://n3gh4s6bvfcn" path="res://cenas/fio_positivo.gd" id="1_vsuy8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6snss"]
+size = Vector2(8.75, 13.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccrme"]
+size = Vector2(251, 14)
+
+[node name="fio_positivo" type="Area2D" unique_id=1789000547]
+script = ExtResource("1_vsuy8")
+
+[node name="FioPositivo" type="Sprite2D" parent="." unique_id=806794650]
+position = Vector2(-0.25, 0)
+scale = Vector2(0.68836564, 1)
+texture = ExtResource("1_pou6n")
+
+[node name="Ponta1" type="Area2D" parent="." unique_id=1864303870]
+position = Vector2(-117, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ponta1" unique_id=1030749651]
+visible = false
+position = Vector2(-2.375, 0)
+shape = SubResource("RectangleShape2D_6snss")
+
+[node name="Ponta2" type="Area2D" parent="." unique_id=512778286]
+position = Vector2(119, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ponta2" unique_id=245588201]
+visible = false
+position = Vector2(1.25, 0)
+shape = SubResource("RectangleShape2D_6snss")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=318457455]
+visible = false
+position = Vector2(0.5, -5)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="area_entered" from="Ponta1" to="." method="_on_ponta_1_area_entered"]
+[connection signal="area_exited" from="Ponta1" to="." method="_on_ponta_1_area_exited"]
+[connection signal="area_entered" from="Ponta2" to="." method="_on_ponta_2_area_entered"]
+[connection signal="area_exited" from="Ponta2" to="." method="_on_ponta_2_area_exited"]

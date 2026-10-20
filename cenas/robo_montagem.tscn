@@ -1,0 +1,223 @@
+[gd_scene format=3 uid="uid://cs6dd2nk05k"]
+
+[ext_resource type="Texture2D" uid="uid://dwr0pw4hyhpp3" path="res://assets/sprites/corpo.png" id="1_hdsfu"]
+[ext_resource type="Script" uid="uid://y2fpai5c87ec" path="res://cenas/robo_montagem.gd" id="1_xjgqd"]
+[ext_resource type="PackedScene" uid="uid://derieyte4u4jn" path="res://cenas/tela_fim_de_fase.tscn" id="2_cxedh"]
+[ext_resource type="Texture2D" uid="uid://yacukuqhkql0" path="res://assets/sprites/tela_fundo.png" id="2_og3xn"]
+[ext_resource type="Texture2D" uid="uid://c1glqqhlinqcr" path="res://assets/sprites/cabeca.png" id="2_xjgqd"]
+[ext_resource type="Texture2D" uid="uid://c507oy5mc0pq5" path="res://assets/sprites/perna.png" id="3_5yi1l"]
+[ext_resource type="Script" uid="uid://12w0vopw3g7c" path="res://cenas/cabeca.gd" id="4_5yi1l"]
+[ext_resource type="Texture2D" uid="uid://cpmpyjfbvacdu" path="res://assets/sprites/braco_direito.png" id="4_630nj"]
+[ext_resource type="Texture2D" uid="uid://dgqru04wsj76p" path="res://assets/sprites/braco_esquerdo.png" id="5_2dyu3"]
+[ext_resource type="Script" uid="uid://csttaqp0wt2qu" path="res://cenas/perna_esquerda.gd" id="6_630nj"]
+[ext_resource type="Script" uid="uid://cgaylp81rt7g" path="res://cenas/perna_direita.gd" id="7_2dyu3"]
+[ext_resource type="Script" uid="uid://bvm3d4kb174y7" path="res://cenas/braco_direito.gd" id="9_tr83j"]
+[ext_resource type="Script" uid="uid://cvda6f38ha3j7" path="res://cenas/braco_esquerdo.gd" id="11_2volf"]
+[ext_resource type="Texture2D" uid="uid://btfr5wm3kyxnp" path="res://assets/sprites/em_pe2.png" id="12_aixj1"]
+[ext_resource type="Texture2D" uid="uid://f3nkhvhjdjgd" path="res://assets/sprites/em_pe1.png" id="13_og3xn"]
+[ext_resource type="Script" uid="uid://botqquu6xpyde" path="res://cenas/robo_em_pe.gd" id="14_wsl7a"]
+[ext_resource type="Script" uid="uid://drg1bk71a2dy4" path="res://cenas/microcontrolador.gd" id="17_0gw7t"]
+[ext_resource type="AudioStream" uid="uid://cn25sq4wv86em" path="res://assets/sons/lofi_.mp3" id="17_cxedh"]
+[ext_resource type="Texture2D" uid="uid://c01havgbdw3ul" path="res://assets/sprites/microcontrolador.png" id="18_0usov"]
+[ext_resource type="AudioStream" uid="uid://poygmnrg858" path="res://assets/sons/pim.mp3" id="19_0usov"]
+[ext_resource type="PackedScene" uid="uid://ccle52au7gbn8" path="res://cenas/menu_volume.tscn" id="20_vjoqv"]
+[ext_resource type="AudioStream" uid="uid://bou03nr4y2uov" path="res://assets/sons/robo.mp3" id="21_bu875"]
+[ext_resource type="PackedScene" uid="uid://bj83t8t5o1mgk" path="res://cenas/lampada_dica.tscn" id="23_32ch0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6snss"]
+size = Vector2(52, 237)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccrme"]
+size = Vector2(133, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwrc3"]
+size = Vector2(53, 247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fih1l"]
+size = Vector2(108, 258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sqt0q"]
+size = Vector2(84, 246)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6snss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_aixj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_og3xn")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sowbf"]
+size = Vector2(129, 155.5)
+
+[node name="RoboMontagem" type="Node2D" unique_id=1344372478]
+script = ExtResource("1_xjgqd")
+
+[node name="TelaFimDeFase" parent="." unique_id=1139651451 instance=ExtResource("2_cxedh")]
+caminho_proxima_fase = "res://cenas/menu_principal.tscn"
+
+[node name="TelaFundo" type="Sprite2D" parent="." unique_id=961071918]
+position = Vector2(577.25, 325)
+scale = Vector2(0.6007813, 0.60370374)
+texture = ExtResource("2_og3xn")
+
+[node name="Corpo" type="Sprite2D" parent="." unique_id=1862490751]
+position = Vector2(188.00003, 296)
+scale = Vector2(0.54298437, 0.6507143)
+texture = ExtResource("1_hdsfu")
+
+[node name="braco_direito" type="Marker2D" parent="Corpo" unique_id=113607884]
+position = Vector2(124, -173)
+
+[node name="braco_esquerdo" type="Marker2D" parent="Corpo" unique_id=198260362]
+position = Vector2(-125, -173)
+
+[node name="cabeca" type="Marker2D" parent="Corpo" unique_id=1020690529]
+position = Vector2(2, -175)
+
+[node name="perna_esquerda" type="Marker2D" parent="Corpo" unique_id=109965737]
+position = Vector2(-51, 173)
+
+[node name="perna_direita" type="Marker2D" parent="Corpo" unique_id=1828417392]
+position = Vector2(49, 173)
+
+[node name="microcontrolador" type="Marker2D" parent="Corpo" unique_id=1517136061]
+position = Vector2(0, 3.0735474)
+
+[node name="PernaEsquerda" type="Area2D" parent="." unique_id=846758152]
+position = Vector2(533, 383)
+script = ExtResource("6_630nj")
+meu_marcador_alvo = "perna_esquerda"
+
+[node name="Sprite2D" type="Sprite2D" parent="PernaEsquerda" unique_id=1857386139]
+position = Vector2(-2, 99)
+scale = Vector2(0.71202505, 0.6177215)
+texture = ExtResource("3_5yi1l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PernaEsquerda" unique_id=1418933621]
+visible = false
+position = Vector2(-3, 91)
+shape = SubResource("RectangleShape2D_6snss")
+
+[node name="Cabeca" type="Area2D" parent="." unique_id=128514979]
+position = Vector2(680, 259)
+script = ExtResource("4_5yi1l")
+meu_marcador_alvo = "cabeca"
+
+[node name="Sprite2D" type="Sprite2D" parent="Cabeca" unique_id=1283547223]
+position = Vector2(-3.000002, -57.999996)
+scale = Vector2(0.6292682, 0.7395833)
+texture = ExtResource("2_xjgqd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cabeca" unique_id=2050512200]
+visible = false
+position = Vector2(0, -70)
+shape = SubResource("RectangleShape2D_ccrme")
+
+[node name="PernaDireita" type="Area2D" parent="." unique_id=2076552617]
+position = Vector2(1084, 347)
+script = ExtResource("7_2dyu3")
+meu_marcador_alvo = "perna_direita"
+
+[node name="Sprite2D" type="Sprite2D" parent="PernaDireita" unique_id=1822623337]
+position = Vector2(-2.999997, 102)
+scale = Vector2(0.70253164, 0.6189873)
+texture = ExtResource("3_5yi1l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PernaDireita" unique_id=2019464722]
+visible = false
+position = Vector2(1, 109)
+shape = SubResource("RectangleShape2D_dwrc3")
+
+[node name="BracoDireito" type="Area2D" parent="." unique_id=1895706140]
+position = Vector2(944, 85)
+script = ExtResource("9_tr83j")
+meu_marcador_alvo = "braco_direito"
+
+[node name="Sprite2D" type="Sprite2D" parent="BracoDireito" unique_id=584529734]
+position = Vector2(23.999992, 108.99999)
+scale = Vector2(0.73061997, 0.7281977)
+texture = ExtResource("4_630nj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BracoDireito" unique_id=1090508707]
+visible = false
+position = Vector2(29, 111)
+shape = SubResource("RectangleShape2D_fih1l")
+
+[node name="BracoEsquerdo" type="Area2D" parent="." unique_id=368379698]
+position = Vector2(791, 370)
+script = ExtResource("11_2volf")
+meu_marcador_alvo = "braco_esquerdo"
+
+[node name="Sprite2D" type="Sprite2D" parent="BracoEsquerdo" unique_id=1254280784]
+position = Vector2(-18, 103.000015)
+scale = Vector2(0.6967214, 0.716763)
+texture = ExtResource("5_2dyu3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BracoEsquerdo" unique_id=1728517459]
+visible = false
+position = Vector2(-20, 97)
+shape = SubResource("RectangleShape2D_sqt0q")
+
+[node name="RoboEmPe" type="AnimatedSprite2D" parent="." unique_id=876819760]
+visible = false
+position = Vector2(224.25, 355.5)
+scale = Vector2(0.6825153, 0.643897)
+sprite_frames = SubResource("SpriteFrames_6snss")
+script = ExtResource("14_wsl7a")
+
+[node name="Música de fundo" type="AudioStreamPlayer" parent="." unique_id=554258781]
+stream = ExtResource("17_cxedh")
+autoplay = true
+bus = &"Musica"
+
+[node name="Button" type="Button" parent="Música de fundo" unique_id=937843801]
+offset_right = 30.0
+offset_bottom = 31.0
+text = "↩️"
+flat = true
+
+[node name="Microcontrolador" type="Area2D" parent="." unique_id=1567065619]
+position = Vector2(467, 174)
+script = ExtResource("17_0gw7t")
+meu_marcador_alvo = "microcontrolador"
+
+[node name="Sprite2D" type="Sprite2D" parent="Microcontrolador" unique_id=1504621441]
+scale = Vector2(0.5341881, 0.6581196)
+texture = ExtResource("18_0usov")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Microcontrolador" unique_id=1636818950]
+visible = false
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_sowbf")
+
+[node name="SomEncaixe" type="AudioStreamPlayer" parent="." unique_id=608168947]
+stream = ExtResource("19_0usov")
+bus = &"Efeitos"
+
+[node name="MenuVolume" parent="." unique_id=1766860655 instance=ExtResource("20_vjoqv")]
+
+[node name="SomTransformacao" type="AudioStreamPlayer" parent="." unique_id=1215580858]
+stream = ExtResource("21_bu875")
+bus = &"Efeitos"
+
+[node name="Lampada Dica" parent="." unique_id=99663401 instance=ExtResource("23_32ch0")]
+position = Vector2(-33, 80)
+texto_da_dica = "Braços e pernas não bastam para viver,
+O Microcontrolador é o cérebro que o faz mover!
+Encaixe a placa no peito com precisão,
+Para o sistema ligar e o robô entrar em ação!"
+
+[connection signal="input_event" from="PernaEsquerda" to="PernaEsquerda" method="_on_perna_esquerda_input_event"]
+[connection signal="input_event" from="Cabeca" to="Cabeca" method="_on_perna_esquerda_input_event"]
+[connection signal="input_event" from="PernaDireita" to="PernaDireita" method="_on_perna_esquerda_input_event"]
+[connection signal="input_event" from="BracoDireito" to="BracoDireito" method="_on_perna_esquerda_input_event"]
+[connection signal="input_event" from="BracoEsquerdo" to="BracoEsquerdo" method="_on_perna_esquerda_input_event"]
+[connection signal="pressed" from="Música de fundo/Button" to="." method="_on_button_pressed"]
+[connection signal="input_event" from="Microcontrolador" to="Microcontrolador" method="_on_perna_esquerda_input_event"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bcpitn3oeu68c" path="res://assets/sprites/lampada.png" id="1_byqnh"]
 [ext_resource type="Script" uid="uid://d2ttmn7jbs04e" path="res://cenas/lampada_dica.gd" id="1_ir38p"]
-[ext_resource type="Texture2D" uid="uid://wcyfteys83rl" path="res://assets/sprites/tolerancia_resistores.jpg" id="2_mbvp0"]
+[ext_resource type="Texture2D" uid="uid://chin3svimb74k" path="res://assets/sprites/tolerancia_resistores.jpg" id="2_mbvp0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rxuge"]
 size = Vector2(49.5, 57)
@@ -45,6 +45,21 @@ offset_bottom = 238.5
 mouse_filter = 2
 texture = ExtResource("2_mbvp0")
 expand_mode = 1
+
+[node name="TextoDica" type="Label" parent="Painel" unique_id=1235143222]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 32.0
+offset_right = 223.0
+offset_bottom = 260.0
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BotaoFechar" type="Button" parent="Painel" unique_id=2066848382]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [node name="lampada_dica" type="Sprite2D" parent="." unique_id=1258416925]
 position = Vector2(71, 530)
