@@ -56,6 +56,9 @@ func testar_circuito():
 	var trilhas_visitadas = []
 	var pinos_visitados = ["Positivo_Bateria"] 
 	
+	# 2. NOVO: Variável que "vigia" se a corrente passa por um resistor
+	var resistor_encontrado = false
+	
 	for nome_da_trilha in trilhas:
 		if "Positivo_Bateria" in trilhas[nome_da_trilha]:
 			trilhas_para_visitar.append(nome_da_trilha)
@@ -63,7 +66,6 @@ func testar_circuito():
 	if trilhas_para_visitar.size() == 0:
 		print("❌ ERRO: O Positivo da Bateria não está ligado em lado nenhum!")
 		emit_signal("energia_desligada") 
-		# Só explode se o LED estiver na mesa
 		if led_na_placa:
 			emit_signal("curto_circuito") 
 		return false
@@ -78,10 +80,24 @@ func testar_circuito():
 		print("🔍 A explorar a trilha: ", trilha_explorada)
 		
 		for pino in trilhas[trilha_explorada]:
+			# 3. NOVO: Se o pino visitado for um resistor, marca que encontrou!
+			if "Resistor" in pino:
+				resistor_encontrado = true
+				
 			if pino == "Negativo_Bateria":
-				print("✅ SUCESSO! Circuito Fechado! A corrente chegou ao negativo!")
-				emit_signal("energia_ligada")
-				return true
+				print("✅ O circuito fechou fisicamente...")
+				
+				# 4. A GRANDE DECISÃO (Com ou sem resistor?)
+				if resistor_encontrado:
+					print("🏆 VITÓRIA! Circuito Fechado COM Resistor! Proteção ativada!")
+					emit_signal("energia_ligada")
+					return true
+				else:
+					print("💥 KABUM! Circuito fechado SEM Resistor! O LED vai queimar!")
+					emit_signal("energia_desligada")
+					if led_na_placa:
+						emit_signal("curto_circuito")
+					return false
 				
 			if not pino in pinos_visitados:
 				pinos_visitados.append(pino)
@@ -99,11 +115,10 @@ func testar_circuito():
 
 	print("❌ FALHA: O circuito está interrompido (aberto). A corrente perdeu-se!")
 	emit_signal("energia_desligada") 
-	# Só explode se o LED estiver na mesa
 	if led_na_placa:
-		emit_signal("curto_circuito")    
+		emit_signal("curto_circuito")   
 	return false
-	
+		
 # Gatilho de teste (Tecla Espaço)
 func _input(event):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:

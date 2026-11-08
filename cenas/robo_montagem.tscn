@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://ccle52au7gbn8" path="res://cenas/menu_volume.tscn" id="20_vjoqv"]
 [ext_resource type="AudioStream" uid="uid://bou03nr4y2uov" path="res://assets/sons/robo.mp3" id="21_bu875"]
 [ext_resource type="PackedScene" uid="uid://bj83t8t5o1mgk" path="res://cenas/lampada_dica.tscn" id="23_32ch0"]
+[ext_resource type="PackedScene" uid="uid://cls0yy6vqw2dx" path="res://cenas/CardIntro.tscn" id="24_slf0w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6snss"]
 size = Vector2(52, 237)
@@ -213,6 +214,9 @@ texto_da_dica = "Braços e pernas não bastam para viver,
 O Microcontrolador é o cérebro que o faz mover!
 Encaixe a placa no peito com precisão,
 Para o sistema ligar e o robô entrar em ação!"
+
+[node name="CardIntro" parent="." unique_id=46931001 instance=ExtResource("24_slf0w")]
+texto_da_missao = "Chegou o grande momento! Temos energia limpa e sensores calibrados, mas falta-nos um cérebro para processar tudo isso. Este é o seu teste final: una as peças de hardware ao Microcontrolador central. Se encaixar tudo com precisão, a nossa criação vai finalmente ganhar vida. Faça história!"
 
 [connection signal="input_event" from="PernaEsquerda" to="PernaEsquerda" method="_on_perna_esquerda_input_event"]
 [connection signal="input_event" from="Cabeca" to="Cabeca" method="_on_perna_esquerda_input_event"]

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cls0yy6vqw2dx"]
+
+[ext_resource type="Script" uid="uid://dl4gka8oig72y" path="res://cenas/card_intro.gd" id="1_rvoil"]
+
+[sub_resource type="FontFile" id="FontFile_ypkae"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/26/0/ascent = 0.0
+cache/0/26/0/descent = 0.0
+cache/0/26/0/underline_position = 0.0
+cache/0/26/0/underline_thickness = 0.0
+cache/0/26/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_1wnux"]
+font = SubResource("FontFile_ypkae")
+font_size = 25
+
+[node name="CardIntro" type="Node2D" unique_id=46931001]
+script = ExtResource("1_rvoil")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=588960901]
+layer = 90
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1097495984]
+visible = false
+offset_top = 397.0
+offset_right = 1154.0
+offset_bottom = 648.0
+color = Color(0.008699992, 0.20092168, 0.29, 0.8980392)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect" unique_id=1815838609]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.010416667
+anchor_top = -0.08755761
+anchor_bottom = 0.12682103
+offset_left = 34.0
+offset_top = 34.714294
+offset_right = 961.0
+offset_bottom = 200.26268
+label_settings = SubResource("LabelSettings_1wnux")
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/ColorRect" unique_id=937219649]
+layout_mode = 0
+offset_left = 979.0
+offset_top = 175.0
+offset_right = 1123.0
+offset_bottom = 215.0
+text = "Iniciar missão"
+autowrap_mode = 2
+
+[connection signal="pressed" from="CanvasLayer/ColorRect/Button" to="." method="_on_button_pressed"]

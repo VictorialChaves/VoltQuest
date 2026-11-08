@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://cwm8legfx8t60" path="res://assets/sons/leberch-interstellar-589820.mp3" id="20_iiw4l"]
 [ext_resource type="AudioStream" uid="uid://poygmnrg858" path="res://assets/sons/pim.mp3" id="22_lqt40"]
 [ext_resource type="PackedScene" uid="uid://ccle52au7gbn8" path="res://cenas/menu_volume.tscn" id="23_rlrem"]
+[ext_resource type="PackedScene" uid="uid://cls0yy6vqw2dx" path="res://cenas/CardIntro.tscn" id="26_05tn8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_m4mp4"]
 font_size = 27
@@ -103,7 +104,7 @@ position = Vector2(891, 202)
 position = Vector2(768, 533)
 
 [node name="Led" parent="." unique_id=213177727 instance=ExtResource("3_j2uq7")]
-position = Vector2(881, 532)
+position = Vector2(893, 525)
 
 [node name="Explosao" type="AnimatedSprite2D" parent="Led" unique_id=622449050]
 visible = false
@@ -142,6 +143,9 @@ stream = ExtResource("22_lqt40")
 bus = &"Efeitos"
 
 [node name="MenuVolume" parent="." unique_id=1766860655 instance=ExtResource("23_rlrem")]
+
+[node name="CardIntro" parent="." unique_id=46931001 instance=ExtResource("26_05tn8")]
+texto_da_missao = "Bem-vindo ao laboratório! Antes de construirmos máquinas gigantes, precisamos de dominar o elemento mais importante: a energia. A sua primeira missão é domar a eletricidade para gerar luz. Ligue os componentes na protoboard e acenda o LED. Mas atenção à voltagem... não se esqueça de proteger o circuito!"
 
 [connection signal="input_event" from="Interruptor" to="." method="_on_interruptor_input_event"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

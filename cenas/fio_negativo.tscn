@@ -13,12 +13,12 @@ size = Vector2(310, 14)
 script = ExtResource("1_f5e6v")
 
 [node name="FioNegativo" type="Sprite2D" parent="." unique_id=1739635129]
-position = Vector2(16.49999, 4.7683716e-07)
-scale = Vector2(0.867036, 1.2500001)
+position = Vector2(-15.000003, 4.7683716e-07)
+scale = Vector2(0.5595568, 1.2500001)
 texture = ExtResource("1_u8bgs")
 
 [node name="Ponta1" type="Area2D" parent="." unique_id=173686144]
-position = Vector2(-133, -19)
+position = Vector2(-111, -20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ponta1" unique_id=733834723]
 visible = false
@@ -26,7 +26,7 @@ position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_6snss")
 
 [node name="Ponta2" type="Area2D" parent="." unique_id=1226831342]
-position = Vector2(168, 20)
+position = Vector2(82, 22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ponta2" unique_id=448223362]
 visible = false

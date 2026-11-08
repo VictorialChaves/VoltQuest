@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://poygmnrg858" path="res://assets/sons/pim.mp3" id="8_cw52b"]
 [ext_resource type="PackedScene" uid="uid://ccle52au7gbn8" path="res://cenas/menu_volume.tscn" id="9_xbrax"]
 [ext_resource type="PackedScene" uid="uid://bj83t8t5o1mgk" path="res://cenas/lampada_dica.tscn" id="11_cvsnu"]
+[ext_resource type="PackedScene" uid="uid://cls0yy6vqw2dx" path="res://cenas/CardIntro.tscn" id="12_l0l6c"]
 
 [sub_resource type="Curve2D" id="Curve2D_la7s3"]
 _data = {
@@ -102,6 +103,9 @@ texto_da_dica = "Motores atrás para a força gerar,
 LDR na frente para a linha enxergar!
 Cada peça tem o seu lugar,
 Troque a ordem e ele não vai andar!"
+
+[node name="CardIntro" parent="." unique_id=46931001 instance=ExtResource("12_l0l6c")]
+texto_da_missao = "Trabalho brilhante com a protoboard! A nossa energia já flui em segurança. Mas um robô precisa de interagir com o mundo. Vamos dar-lhe músculos e instintos. Monte o chassi do nosso protótipo usando motores para a força e sensores LDR como 'olhos'. Configure tudo corretamente para ele seguir a pista e cruzar a linha de chegada!"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 

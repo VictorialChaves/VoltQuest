@@ -10,12 +10,13 @@ size = Vector2(168, 60)
 size = Vector2(14, 4.75)
 
 [node name="Resistor" type="Area2D" unique_id=520113793]
+rotation = 1.5707964
 script = ExtResource("1_uly2f")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1976324281]
-position = Vector2(0, -1.4210855e-14)
+position = Vector2(-1, -2)
 rotation = 1.5707964
-scale = Vector2(0.22882949, 0.19379085)
+scale = Vector2(0.15657516, 0.13496734)
 texture = ExtResource("2_uly2f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1313646698]
@@ -40,7 +41,8 @@ offset_bottom = 39.0
 text = "Resistor de 1kΩ: Limita a corrente elétrica no circuito."
 
 [node name="Pino1_resistor" type="Area2D" parent="." unique_id=535388918]
-position = Vector2(-76, 1)
+position = Vector2(-1.0000021, -52)
+rotation = 1.5707964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pino1_resistor" unique_id=1580759346]
 visible = false
@@ -48,7 +50,8 @@ position = Vector2(4, -0.25)
 shape = SubResource("RectangleShape2D_ccrme")
 
 [node name="Pino2_resistor" type="Area2D" parent="." unique_id=357189867]
-position = Vector2(76, 1)
+position = Vector2(2.1457672e-06, 48)
+rotation = 1.5707964
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Pino2_resistor" unique_id=1439479038]
 visible = false
